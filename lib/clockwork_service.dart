@@ -8,6 +8,8 @@ class ClockworkService {
   ClockworkService(this.dio);
 
   Future<ClockworkResponse> startTimer(String issue) async {
+    print(token);
+
     final response = await dio.post('${endpoint}start_timer',
         data: {'issue_key': issue},
         options: Options(headers: {'Authorization': 'Token $token'}));
